@@ -1,0 +1,40 @@
+.our-partners{
+    height: 120px;
+    width: 100%;
+    background-color: #f6f6f5;
+    margin: 140px auto;
+    display: flex;
+    justify-content: space-around;
+    padding: 20px 0 20px 80px;
+}
+
+.our-partners #text{
+    width: 15%;
+    font-size: 20px;
+    margin: 10px 0;
+    font-family: Raleway;
+    color: #00334E;
+    text-align: center;
+}
+
+.our-partners #rabotaru{
+    background: url('../img/rabotaru-logo.jpg') center center no-repeat;
+}
+
+.our-partners #superjob{
+    background: url('../img/superJob-logo.png') center center no-repeat;
+}
+
+.our-partners #avito{
+    background: url('../img/avito-logo.png') center center no-repeat;
+}
+
+.our-partners #hhru{
+    background: url('../img/hhru-logo_edited.png') center center no-repeat;
+}
+
+.our-partners .column{
+    display: inline-block;
+    height: 90px;
+    width: 20%;
+}

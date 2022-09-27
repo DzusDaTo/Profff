@@ -1,0 +1,250 @@
+
+button {
+	outline: none !important;
+	border: none;
+	background: transparent;
+}
+
+
+button:hover {
+	cursor: pointer;
+}
+
+/*------------------------------------------------------------------
+[ Button ]*/
+.container-button_sign_up {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+}
+
+.container-button_sign_up button {
+  font-family: Raleway-Bold;
+  font-size: 20px;
+  color: #fff;
+  line-height: 1.2;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+  min-width: 150px;
+  height: 55px;
+  background-color: #00334E;
+  border-radius: 27px;
+  right: 20px;
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+  margin-left: 350px;
+  margin-top: 40px;
+}
+
+.container-button_sign_up button:hover {
+  -webkit-box-shadow: 0px 5px 19px 6px rgba(34, 60, 80, 0.2);
+  -moz-box-shadow: 0px 5px 19px 6px rgba(34, 60, 80, 0.2);
+  box-shadow: 0px 5px 19px 6px rgba(34, 60, 80, 0.2);
+  font-size: 22px;
+}
+/* готово */
+body{
+  margin: 0;
+  padding: 0;
+}
+
+
+
+
+
+
+#description_form_sign_up {
+    /*display: none;*/
+    animation-duration: 0.5s;
+    animation-fill-mode: both;
+    animation-name: fadeIn;    
+    color: #00334E;
+    
+  }
+
+#description_form_sign_up img{
+  float: left;
+  margin: 0;
+  height: 700px;
+  width: 100%;
+  position: fixed;
+}
+
+
+#description_form_sign_up hr{
+  color: white;
+  width: min-content;
+}
+
+
+#description_form_sign_up .form_of_registration_sign_up{
+  text-align: center;
+  font-family: 'Pattaya', sans-serif;
+  position: relative;
+  width: 50%;
+}
+
+#description_form_sign_up .form_of_registration_sign_up h2{
+  font-size: 42px;
+  font-weight: normal;
+  color: white;
+  margin: 0;
+  padding: 0;
+
+
+
+  padding-top: 40px;
+}
+
+#description_form_sign_up .form_of_registration_sign_up h3{
+  font-size: 22px;
+  font-weight: normal;
+  color: white;
+  margin: 0;
+  padding: 0;
+  
+}
+
+.form_of_registration_sign_up .wrap-input_sign_up{
+  margin: 10px;
+}
+
+
+
+.form_of_registration_sign_up form{
+  padding: 55px 85px;
+  
+  display: flex;
+  flex-wrap: wrap;
+}
+  
+  #description_form_sign_up.open_sign_up {
+    display: block;
+  }
+
+  #description_form_sign_up.close_sign_up { 
+    /*display: none;*/
+  }
+  
+  .popup_sign_up {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(17, 17, 17, 0.5);
+    transition: all 0.5s ease;
+    /*display: none;*/
+    
+  z-index: 20;
+  }
+  
+  .popup_open_sign_up {
+    display: block;
+  }
+  
+  .popup_close_sign_up {
+    /*display: none;*/
+  }
+
+
+  .popup__container_sign_up {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    border-radius: 10px;
+    max-width: 1400px;
+    width: 100%;
+    max-height: 700px;
+    height: 100%;
+    padding: 0;
+    background-color: #f6f6f5;
+  }
+  
+  .popup__wrapper_sign_up {
+    padding-right: 40px;
+    text-align: justify;
+    border-radius: 10px;
+    
+  }
+
+
+.description_sign_up span{
+  font-size: 18px;
+  font-weight: bold;
+  z-index: 22;
+}
+
+.description_sign_up{
+  padding-top: 30px;
+  float: right;
+  width: 20px;
+  font: 1em/1.5 'Open Sans', Arial, Sans-serif;
+}
+
+.pop_up_sign_up {
+  width: 140px;
+  height: 40px;
+  color: #00334E;
+  background-color: #FFC208;
+  border-style: none;
+  font-family: 'Raleway' sans-serif;
+  font-size: 18px;
+  position: absolute;
+  bottom: 10px;
+  right: 20px;
+  cursor: pointer;
+  margin: 20px;
+}
+
+
+.form_of_registration_sign_up .wrap-input_sign_up {
+
+  height: fit-content;
+}
+
+
+.form_of_registration_sign_up .input {
+  margin: 10px 0;
+  font-family: Raleway-Medium;
+  color: #555555;
+  line-height: 1.2;
+  font-size: 18px;
+  outline: none;
+  display: block;
+  width: 100%;
+  background: transparent;
+  height: 60px;
+  padding: 0 25px 0 25px;
+  margin-bottom: 5px;
+  position: relative;
+  position: relative;
+  background-color: #fff;
+  border: 1px solid #e6e6e6;
+  border-radius: 2px;
+
+}
+
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  

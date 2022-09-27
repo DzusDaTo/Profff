@@ -1,0 +1,59 @@
+.parallax{
+  height: 725px;
+}
+
+.parallax .back_wrapper{
+  width: 50%;
+  float: left;
+}
+
+.parallax .back{
+  float: right;
+}
+
+.parallax h2{
+  font-family: Raleway;
+  color: white;
+  font-size: 63px;
+  width: 850px;
+  text-align: center;
+  padding-top: 130px;
+  padding-left: 50px;
+}
+
+.parallax .back_middle{
+  width: 850px;
+  text-align: center;
+  padding: 50px 50px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 24px;
+  color:white;
+}
+
+
+.parallax .back_bottom{
+  width: 550px;
+  display: flex;
+  justify-content: space-between;
+  margin-top:70px;
+  margin-left: 150px;
+}
+
+
+.parallax .back_bottom button{
+  font-family: 'Open Sans', sans-serif;
+  font-size: 15px;
+  color: #00334E;
+  border: none;
+  border-radius: 50px;
+  width: fit-content;
+  padding: 15px 20px;
+}
+
+.parallax .back_bottom #red{
+  background-color: #ff5454;
+}
+
+.parallax .back_bottom #yellow{
+  background-color: #ffc208;
+}

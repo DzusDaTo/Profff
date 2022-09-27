@@ -1,0 +1,94 @@
+.about-site .right-tape{
+    font-family: Raleway;
+    font-weight: bold;
+    height: 110px;
+    font-size: 36px;
+    color: #00334E;
+    text-align: center;
+    background-color: #ffc208;
+    padding: 35px;
+}
+
+
+
+.about-site .flex-wrapper{
+    width: 100%;
+    height: 665px;
+    background: url('../img/загруженное.png') bottom center/cover no-repeat;
+}
+
+
+.about-site .columns-wrapper{
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+    height: 100%;
+    justify-content: space-evenly;
+}
+
+
+
+.about-site .column{
+    width: 25%;
+    height: 100%;
+    text-align: center;
+    padding: 90px;
+}
+
+
+
+.about-site .column .image{
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    border-radius: 50%;
+    background-color: white;
+}
+
+.about-site .column #pupil{
+    background: url('../img/child.png') bottom center/cover no-repeat;
+}
+
+.about-site .column #student{
+    background: url('../img/student.png') bottom center/cover no-repeat;
+}
+
+.about-site .column #teacher{
+    background: url('../img/teacher.png') bottom center/cover no-repeat;
+}
+
+.about-site .column #employer{
+    background: url('../img/boss.png') bottom center/cover no-repeat;
+}
+
+
+.about-site .column button{
+    color: #ff5454;
+    border: none;
+    font-size: 26px;
+    text-align: center;
+    width: 240px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0);
+    margin: 40px auto;
+    cursor: pointer;
+}
+
+
+
+.about-site .column .description{
+    width: 240px;
+    height: 130px;
+    font-size: 16px;
+    font-family: 'Open-Sans', sans-serif;
+    text-align: center;
+    color: #00334E;
+    margin: 0 auto;
+}
+
+.about-site .column .quotation{
+    color: #ff5454;
+    font-size:50px;
+}
+
+

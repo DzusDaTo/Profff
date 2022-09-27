@@ -1,0 +1,425 @@
+{% load static %}
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{% static 'main/css/all.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/about-site.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/advantage.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/const-line.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/contacts-block.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/footer.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/menu.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/our-partners.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/parallax.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/registration-form.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/resume-block.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/tape.css' %}">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="{% static 'main/js/parallax.js-1.5.0/parallax.js' %}"></script>
+
+
+    <title>Главная</title>
+
+
+
+</head>
+<body>
+<<<<<<< HEAD
+
+        <!-- зафиксированная строка с номером телефона и социальными сетями начало -->
+        <div class="const_line">
+            <p id="left_const_line"><a href="tel:+78672511238"><img src="{% static 'main/img/telephone.png' %}" alt="telephone">+7 (8672) 51-12-38</a></p>
+            <p id="right_const_line">Мы в соц. сетях:
+                <a href="https://www.instagram.com/copp__rso/" target="_blank"><img src="{% static 'main/img/instagram.png' %}" alt="instagram" style="margin-left: 10px;"></a>
+                <a href="https://www.facebook.com/copp.15" target="_blank"><img src="{% static 'main/img/facebook.png' %}" alt="facebook"></a>
+                <a href="https://twitter.com/copp_spb" target="_blank"><img src="{% static 'main/img/twitter.png' %}" alt="twitter"></a>
+                <a href="https://wa.me/+78672511238" target="_blank"><img src="{% static 'main/img/whatsapp.png' %}" alt="whatsapp"></a>
+            </p>
+        </div>
+        <!-- зафиксированная строка с номером телефона и социальными сетями конец -->
+
+
+
+        <!-- Пустота под зафиксированной строкой -->
+        <div id="empty"></div>
+
+
+
+        <!-- Главное меню начало-->
+        <div id="header">
+            <div class="logo-wrap">
+                <a href="https://copp15.ru/">
+                    <div id="logo">
+                        <img src="{% static 'main/img/main/blueLogo.png' %}" alt="logo">
+                        ПРОФОРИЕНТАЦИЯ
+                    </div>
+                </a>
+            </div>
+
+
+            <div id="menu">
+                <hr id="hr_before">
+                <div id="menu-wrap">
+                    <ul class="menu">
+                        <li><a style="color: rgb(255, 84, 84);" href="{% url 'home'%}">ГЛАВНАЯ</a></li>
+                        <li><a href="{% url 'news' %}">НОВОСТИ</a></li>
+                        <li id="seekers"><a href="{% url 'vacan' %}">СОИСКАТЕЛЯМ</a>
+                            <ul class="submenu">
+                                <li><a href="{% url 'index_sch' %}">ШКОЛЬНИКАМ</a></li>
+                                <li><a href="{% url 'resumeout' %}">РАБОТОДАТЕЛЯМ</a></li>
+                            </ul>
+                        </li>
+                        {% if request.user.is_authenticated %}
+                                <li>Добро пожаловать, {{ user.username }} /</li>
+                                <li><a href="{% url 'logout' %}">Выход</a></li>
+                            {%else%}
+                                <li><a href="{% url 'register' %}">РЕГИСТРАЦИЯ</a></li>
+                                <li><a href="{% url 'login' %}">ВОЙТИ</a></li>
+                            {% endif %}
+                    </ul>
+                </div>
+                <hr id="hr_after">
+            </div>
+        </div>
+        <!-- Главное меню конец-->
+
+
+
+
+
+
+
+
+
+
+        <!-- Параллакс начало-->
+        <div class="parallax" data-position="10px 10px" data-parallax="scroll" data-image-src="{% static 'main/img/main_background.png' %}">
+            <div class="back_wrapper">
+                <div class="back">
+                    <div class="back_head">
+                        <h2>Найти работу по душе - это просто!</h2>
+                    </div>
+                    <div class="back_middle">
+                        <h3>Найти своё призвание,<br> разместить резюме,<br> сформировать команду<br> сотрудников</h3>
+                    </div>
+                    <div class="back_bottom">
+                        <div><button id="red" onclick="location.href={% url 'vacan' %}" style="cursor: pointer">&rsaquo; Перейти к поиску работы</button></div>
+                        <div><button id="yellow" onclick="location.href={% url 'home1'%}" style="cursor: pointer">&rsaquo; Разместить вакансию</button></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Параллакс конец -->
+
+
+        <!-- Блок с резюме начало -->
+        <div class="resume-block" >
+            <div class="left">
+                <img src="{% static 'main/img/rezumeee.png' %}" alt="resume">
+            </div>
+
+            <div class="right">
+                <div class="tape">
+                    <div class="undertape">
+                        <div class="right_line" data-aos="fade-left" data-aos-duration="1500" data-aos-once="true"><h2 class="right_block" data-aos="fade-left" data-aos-duration="1500" data-aos-once="true">ЧТО ТАКОЕ <b>РЕЗЮМЕ</b> И ДЛЯ ЧЕГО ОНО НУЖНО</h2></div>
+                    </div>
+                </div>
+
+
+                <div class="text">
+                    <p>Резюме - это документ, содержащий основную информацию о Вашем опыте работы,
+                    образовании, навыках, а также курсах повышения квалификации и прочих достижениях.</p>
+                    <p>Зачастую Ваше резюме - это первый контакт с работодателем, из-за чего при написании этого документа
+                    очень важно выделить себя на фоне других соискателей.</p>
+                    <p>Какие Ваши сильные стороны? Какими достижениями Вы гордитесь? Как Ваше хобби может положительно
+                    сказаться на при решении тех или иных трудовых задач? Ответы на эти вопросы будут хорошим дополнением к Вашему резюме. 
+                    <p>Резюме необходимо написать так, чтобы произвести впечатление уже при первом прочтении. По статистике,
+                    просмотр резюме занимает у работодателя 2-3 минуты, поэтому оно должно привлечь внимание с первого раза.</p>
+                </div>
+            </div>
+        </div>
+        <!-- Блок с резюме конец -->
+
+        <!-- Блок с приемуществами начало -->
+        <div class="advantage">
+
+            <div class="left">
+                <div class="tape">
+                    <div class="undertape">
+                        <div class="left_line" data-aos="fade-right" data-aos-duration="1500" data-aos-once="true"><h2 class="left_block" data-aos="fade-right" data-aos-duration="1500" data-aos-once="true"><b>ПРИЕМУЩЕСТВА</b> РАЗМЕЩЕНИЯ В ИНТЕРНЕТЕ </h2></div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <div class="right">
+                <div class="points">
+
+                    <div class="point">
+                        <div class="check-wrapper">
+                            <div class="check"></div>
+                        </div>
+                        <div class="text">
+                            <h4>ОБЛАЧНОЕ ХРАНИЛИЩЕ </h4><br>
+                            <h6>Ваше резюме хранится на облаке, что даёт Вам постоянный доступ к нему </h6>
+                        </div>
+                    </div>
+
+                    <div class="point">
+                        <div class="check-wrapper">
+                            <div class="check"></div>
+                        </div>
+                        <div class="text">
+                            <h4>ОПЕРАТИВНОСТЬ ПОЯВЛЕНИЯ В СЕТИ </h4><br>
+                            <h6>Моментальная публикация Вашего резюме</h6>
+                        </div>
+                    </div>
+
+                    <div class="point">
+                        <div class="check-wrapper">
+                            <div class="check"></div>
+                        </div>
+                        <div class="text">
+                            <h4>ВЫСОКАЯ ВЕРОЯТНОСТЬ НАЙТИ РАБОТУ </h4><br>
+                            <h6>Интернет - самый популярный способ найти работу по данным hh.ru </h6>
+                        </div>
+                    </div>
+
+                    <div class="point">
+                        <div class="check-wrapper">
+                            <div class="check"></div>
+                        </div>
+                        <div class="text">
+                            <h4>БОЛЬШОЕ КОЛИЧЕСТВО ВАКАНСИЙ </h4><br>
+                            <h6>По данным SuperJob 6 из 10 работодателей ищут сотрудников через интернет</h6>
+                        </div>
+                    </div>
+
+
+                    <div class="point">
+                        <div class="check-wrapper">
+                            <div class="check"></div>
+                        </div>
+                        <div class="text">
+                            <h4>ВСЕГДА НА СВЯЗИ </h4><br>
+                            <h6>Постоянный доступ к Вашему резюме потенциальным работодателям</h6>
+                        </div>
+                    </div>
+
+
+                    <div class="point">
+                        <div class="check-wrapper">
+                            <div class="check"></div>
+                        </div>
+                        <div class="text">
+                            <h4>ПОДПИСКА НА ВАКАНСИИ </h4><br>
+                            <h6>Возможность отслеживать появление </h6>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+        <!-- Блок с приемуществами конец -->
+
+
+        <!-- Блок о сайте начало -->
+        <div class="about-site">
+
+            <div class="right-tape">
+                    ПОДРОБНЕЕ О САЙТЕ
+            </div>
+
+            <div class="flex-wrapper">
+                <div class="columns-wrapper">
+                    <div class="column">
+                        <div class="image" id="pupil"></div>
+                        <button>Школьникам</button>
+                        <div class="description">
+                            Размести информацию о своих достижениях в учёбе и хобби, найди наставника, который поможет стать тебе лучшим в интересующей сфере.
+                        </div>
+                        <div class="quotation">
+                            &#10076;&#10076;
+                        </div>
+                    </div>
+
+                    <div class="column">
+                        <div class="image" id="student"></div>
+                        <button>Студентам</button>
+                        <div class="description">
+                            Разместите резюме, расскажите о Ваших достижениях в учёбе и работе, заявите о себе на рынке труда и найдите работу по душе.
+                        </div>
+                        <div class="quotation">
+                            &#10076;&#10076;
+                        </div>
+                    </div>
+
+                    <div class="column">
+                        <div class="image" id="teacher"></div>
+                        <button>Наставникам</button>
+                        <div class="description">
+                            Расскажите о Ваших заслугах, найдите замотивированных детей и студентов и соберите команду единомышленников для совместных проектов.
+                        </div>
+                        <div class="quotation">
+                            &#10076;&#10076;
+                        </div>
+                    </div>
+
+                    <div class="column">
+                        <div class="image" id="employer"></div>
+                        <button>Работодателям</button>
+                        <div class="description">
+                            Разместите вакансию, рассмотрите подходящие резюме, свяжитесь с кандидатом и устройте онлайн собеседование.
+                        </div>
+                        <div class="quotation">
+                            &#10076;&#10076;
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+
+        </div>
+        <!-- Блок о сайте конец -->
+
+
+        <!-- Блок о партнёрах начало -->
+        <div class="our-partners">
+            <div class="column" id="text">
+                Разместите Ваше резюме на сайтах наших партнёров:
+            </div>
+
+            <a class="column" id="rabotaru" href="https://vladikavkaz.rabota.ru/?utm_campaign=poisk_brand_rf%7C49050427&utm_source=Yandex_Direct_di&utm_medium=cpc&utm_content=4086184257%7C8540741734%7Cdesktop&utm_term=работа%20ру&yclid=595183444607930662" target="blanck"></a>
+
+            <a class="column" id="superjob" href="https://www.superjob.ru/resume/pilot.html?o%5B0%5D=8&show_refused=0&yclid=595199415857208554&utm_source=yandex_sj&utm_medium=cpc&utm_campaign=SJ_rabotodateli_do_RF%7Ctype3&utm_content=1100361%7CРаботодатели%7C1%7CВладикавказ&utm_term=none" target="blanck"></a>
+
+            <a class="column" id="avito" href="https://www.avito.ru/vladikavkaz/vakansii" target="blanck"></a>
+
+            <a class="column" id="hhru" href="https://vladikavkaz.hh.ru/search/vacancy?area=82&utm_source=yandex&utm_medium=cpc&utm_campaign=50692207-yd-main_b2c-rf-krasnodar-k50-search-tgo-keyword-cities-desk-pid_1475-aid_82-none&utm_term=работа%20Владикавказ&utm_content=k50id-01000003-pid-20161303244-rid--cid-50692207-gbid-4150525115-aid-8836008471-cgid-0-mt--an--atid-20161303244-mk--aph-no-apht-none-st-search-src-none-pt-premium-pst-1-device-desktop-crid-0-regid-33-regn-Владикавказ-iid--&yclid=595181126123019750" target="blanck"></a>
+        </div>
+        <!-- Блок о партнёрах конец -->
+
+
+
+        <!-- Блок регистрации начало -->
+        <div class="registration-form">
+            <div class="header">
+                    Сделайте путь от соискателя до работодателя короче!
+            </div>
+            <form method="POST">
+                <input type="email" id="email" required placeholder="Эл. почта">
+                <input type="text" id="name" required placeholder="Имя">
+                <input type="password" id="password" required placeholder="Пароль">
+                <input type="submit" id="submit" value="Присоединиться" style="cursor: pointer">
+
+            </form>
+            <p>На указаную почту было отправлено письмо. Перейдите по ссылке в нём для подтверждения аккаунта.</p>
+        </div>
+        <!-- Блок регистрации конец -->
+
+
+
+
+
+
+
+
+
+
+
+
+        <div class="contacts-block">
+            <div class="contacts-wrapper">
+                <h2>Остались вопросы?</h2>
+                <a href="mailto:copp15@gmail.com"></a><button>Напишите нам! <span>&#9993;</span></button>
+                <h3>или присоединитесь в соц.сетях:</h3>
+                <div class="social-nets">
+                    <a href="https://www.instagram.com/copp__rso/" target="_blank"><img src="{% static 'main/img/instagram-baw.jpg' %}" alt="instagram"></a>
+                    <a href="https://www.facebook.com/copp.15" target="_blank"><img src="{% static 'main/img/facebook-baw.jpg' %}" alt="facebook"></a>
+                    <a href="https://wa.me/+78672511238" target="_blank"><img src="{% static 'main/img/whatsapp-baw.jpg' %}" alt="whatsapp"></a>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <div class="footer">
+                <div class="ul">
+                    <div class="footer_column">
+                            <div class="footer_content">
+                                <p class="footer_head">ЦОПП</p><hr>
+                                <a href="https://copp15.ru/"><img src="{% static 'main/img/logoCopp.png' %}" id="logo-copp" alt="logo"></a>
+                            </div>
+                        </div>
+                    <div class="footer_column">
+                        <div class="footer_content">
+                            <p class="footer_head">Документация</p><hr>
+                            <p><a href="https://drive.google.com/drive/folders/1o1LztE8b--L0l-roRAbLAuYdr0ks8-N_?usp=sharing" target="_blank">Пользовательское соглашение</a></p>
+                            <p><a href="https://drive.google.com/drive/folders/1Nt3H-qpHo728Ep5PRp3-IOkUpVXnhzL_?usp=sharing" target="_blank">Политика конфиденциальности</a></p>
+                            <p><a href="https://drive.google.com/drive/folders/1gmuz6909j_aXigFQ7CpZxq6aLQ6d5z2e?usp=sharing" target="_blank">Нормативно-правовые акты</a></p>
+                            <p><a href="https://drive.google.com/drive/folders/1oBd42zRh1j2lfFuz2_OeqSkk_0o_4IoA?usp=sharing" target="_blank">Регламент деятельности ЦОПП</a></p>
+                        </div>
+                    </div>
+                    <div class="footer_column">
+                            <div class="footer_content" id="partners">
+                                <p class="footer_head">О нас</p><hr>
+                                <p><a href="https://worldskills.ru/nashi-proektyi/czentr-operezhayushhej-professionalnoj-podgotovki.html" target="_blank">О проекте</a></p>
+                                <p>Наши партнёры:</p>
+                                <a href="https://worldskills.ru/" target="_blank"><img src="{% static 'main/img/worldskills.jpg' %}" alt="worldskills_logo"></a>
+                                <a href="http://mon.alania.gov.ru/" target="_blank"><img src="{% static 'main/img/minobr.jpg' %}" alt=minobr_logo></a>
+                                <a href="https://edu.gov.ru/" target="_blank"><img src="{% static 'main/img/minpros.jpg' %}" alt="minpros_logo"></a>
+                            </div>
+                        </div>
+                    <div class="footer_column">
+                            <div class="footer_content" id="contacts">
+                                <p class="footer_head">Контакты</p><hr>
+                                <p><a href="tel:+78672511238"><img src="{% static 'main/img/telephone.png' %}" alt="telephone">+7 (8672) 51-12-38</a></p>
+                                <div><address><img src="{% static 'main/img/address.png' %}" alt="address">г. Владикавказ, ул. Галковского, дом 221</address></div>
+                                <p><a href="mailto:'tsopp15@gmail.com'"><img src="{% static 'main/img/post.png' %}" alt="mail">copp15@mail.ru</a></p>
+                                <p>Мы в соцсетях:</p>
+                                <a class="social-nets" href="https://www.instagram.com/copp__rso/" target="_blank"><img src="{% static 'main/img/instagram.png' %}" alt="instagram"></a>
+                                <a class="social-nets" href="https://www.facebook.com/copp.15" target="_blank"><img src="{% static 'main/img/facebook.png' %}" alt="facebook"></a>
+                                <a class="social-nets" href="https://twitter.com/copp_spb" target="_blank"><img src="{% static 'main/img/twitter.png' %}" alt="twitter"></a>
+                                <a class="social-nets" href="https://wa.me/+78672511238" target="_blank"><img src="{% static 'main/img/whatsapp.png' %}" alt="whatsapp"></a>
+                            </div>
+                        </div>
+                </div>
+            </div>
+
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script>
+        AOS.init();
+        </script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.1/owl.carousel.min.js'></script>
+
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+</body>
+</html>

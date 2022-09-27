@@ -1,0 +1,50 @@
+.contacts-block{
+    width: 100%;
+    height: fit-content;
+    margin: 100px 0;
+}
+
+.contacts-block .contacts-wrapper{
+    text-align: center;
+}
+
+.contacts-block .contacts-wrapper h2{
+    font-family: Raleway;
+    font-size: 50px;
+    font-weight: bold;
+    color: #00334E
+}
+
+.contacts-block .contacts-wrapper h3{
+    font-family: Raleway;
+     font-size: 25px;
+     font-weight: bold;
+     color: #00334E;
+}
+
+.contacts-block .contacts-wrapper button{
+    color: #ff5454;
+    border: none;
+    font-family: Raleway;
+    font-weight: bold;
+    font-size: 18px;
+    text-align: center;
+    width: 240px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0);
+    margin: 40px auto;
+    cursor: pointer;
+}
+
+.contacts-block .contacts-wrapper span{
+    color: black;
+    font-size: 26px;
+}
+
+.contacts-block .social-nets{
+    margin: 60px;
+}
+
+.contacts-block .social-nets img{
+    margin: 0 10px;
+}

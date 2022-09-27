@@ -1,0 +1,208 @@
+{% load static %}
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="{% static 'register/css/register.css' %}">
+	<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="{% static 'register/images/icons/favicon.ico' %}"/>
+<!--===============================================================================================-->
+<!--	<link rel="stylesheet" type="text/css" href="{% static 'register/vendor/bootstrap/css/bootstrap.min.css' %}">-->
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'register/fonts/font-awesome-4.7.0/css/font-awesome.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'register/fonts/Linearicons-Free-v1.0.0/icon-font.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'register/vendor/animate/animate.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'register/vendor/css-hamburgers/hamburgers.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'register/vendor/animsition/css/animsition.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'register/vendor/select2/select2.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'register/vendor/daterangepicker/daterangepicker.css' %}">
+
+
+
+	<link rel="stylesheet" href="{% static 'main/css/all.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/const-line.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/footer.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/menu.css' %}">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <title>Register</title>
+</head>
+<body>
+
+<!-- зафиксированная строка с номером телефона и социальными сетями начало -->
+        <div class="const_line">
+            <p id="left_const_line"><a href="tel:+78672511238"><img src="{% static 'main/img/telephone.png' %}" alt="telephone">+7 (8672) 51-12-38</a></p>
+            <p id="right_const_line">Мы в соц. сетях:
+                <a href="https://www.instagram.com/copp__rso/" target="_blank"><img src="{% static 'main/img/instagram.png' %}" alt="instagram" style="margin-left: 10px;"></a>
+                <a href="https://www.facebook.com/copp.15" target="_blank"><img src="{% static 'main/img/facebook.png' %}" alt="facebook"></a>
+                <a href="https://twitter.com/copp_spb" target="_blank"><img src="{% static 'main/img/twitter.png' %}" alt="twitter"></a>
+                <a href="https://wa.me/+78672511238" target="_blank"><img src="{% static 'main/img/whatsapp.png' %}" alt="whatsapp"></a>
+            </p>
+        </div>
+        <!-- зафиксированная строка с номером телефона и социальными сетями конец -->
+
+
+
+        <!-- Пустота под зафиксированной строкой -->
+        <div id="empty"></div>
+
+
+
+        <!-- Главное меню начало-->
+        <div id="header">
+            <div class="logo-wrap">
+                <a href="https://copp15.ru/">
+                    <div id="logo">
+                        <img src="{% static 'main/img/main/blueLogo.png' %}" alt="logo">
+                        ПРОФОРИЕНТАЦИЯ
+                    </div>
+                </a>
+            </div>
+
+
+            <div id="menu">
+                <hr id="hr_before">
+                <div id="menu-wrap">
+                    <ul class="menu">
+                        <li><a href="{% url 'home'%}">ГЛАВНАЯ</a></li>
+                        <li><a href="{% url 'news' %}">НОВОСТИ</a></li>
+                        <li id="seekers"><a href="/vacan">СОИСКАТЕЛЯМ</a>
+                            <ul class="submenu">
+                                <li><a href="{% url 'index_sch' %}">ШКОЛЬНИКАМ</a></li>
+								<li><a href="/resumeout">РАБОТОДАТЕЛЯМ</a></li>
+                            </ul>
+                        </li>
+                        {% if request.user.is_authenticated %}
+                                <li>Добро пожаловать, {{ user.username }} /</li>
+                                <li><a href="{% url 'logout' %}">Выход</a></li>
+                            {%else%}
+                                <li><a style="color: rgb(255, 84, 84);" href="{% url 'register' %}">РЕГИСТРАЦИЯ</a></li>
+                                <li><a href="{% url 'login' %}">ВОЙТИ</a></li>
+                            {% endif %}
+                    </ul>
+                </div>
+                <hr id="hr_after">
+            </div>
+        </div>
+        <!-- Главное меню конец-->
+    <div class="limiter">
+
+		<div class="container-login100">
+			<div class="passwordHelp">
+				<div id="message">
+					<h6>Пароль должен содержать:</h6>
+					<br>
+					<p id="letter" class="invalid"><span class="no" id="letter_span">&#10008;</span> &#8195;&#8195; Строчную латинскую букву;</p>
+					<p id="capital" class="invalid"><span class="no" id="capital_span">&#10008;</span> &#8195;&#8195; Заглавную латинскую букву;</p>
+					<p id="number" class="invalid"><span class="no" id="number_span">&#10008;</span> &#8195;&#8195; Цифру / цифры;</b></p>
+					<p id="length" class="invalid"><span class="no" id="length_span">&#10008;</span> &#8195;&#8195; 6 и более символов.</p>
+				</div>
+			</div>
+
+
+
+
+
+			<div class="wrap-login100" style="padding: 55px 85px;">
+				<form method="post" class="login100-form validate-form" style="">
+					<span class="login100-form-title form-header" style="">
+						Регистрация
+					</span><br>
+
+
+						{%csrf_token%}
+
+						<span>
+						<p class="txt1"><label for="id_username">Ник:</label></p>
+						<p class="wrap-input">
+							<input class="form-control" type="text" autofocus="" name="username" required="" placeholder="✎ 	Ник" id="id_username" >
+						</p>
+						<span class="focus-input"></span>
+
+
+						<p class="txt1"><label for="id_first_name">Имя:</label></p>
+						<p class="wrap-input">
+							<input class="input" type="text" name="first_name" class="form-control" required="" placeholder="✎ 	Имя" id="id_first_name">
+						</p>
+						<span class="focus-input"></span>
+
+						<p class="txt1"><label for="id_first_name">Фамилия:</label></p>
+						<p class="wrap-input">
+							<input class="input" type="text" name="last_name" class="form-control" required="" placeholder="✎ 	Фамилия:" id="id_last_name">
+						</p>
+						<span class="focus-input"></span>
+
+
+
+						<p class="txt1"><label for="id_email">Почта:</label></p>
+						<p class="wrap-input">
+							<input class="input" type="text" name="email" class="form-control" required="" id="id_email" placeholder="✉ 	Почта">
+						</p>
+						<span class="focus-input"></span>
+						<div><small id="mailHelp" class="form-text text-muted">На эту почту мы вышлем Вам письмо для
+						подтверждения Вашего аккаунта.</small></div>
+
+
+
+						<p class="txt1"><label for="id_password1">Пароль:</label></p>
+						<p class="wrap-input">
+							<input class="input" type="password" name="password1" class="form-control" required="" id="id_password1" placeholder="✎    Пароль">
+						</p>
+						<span class="focus-input"></span>
+
+
+
+						<p class="txt1"><label for="id_password2">Подтвердите пароль:</label></p>
+						<p class="wrap-input">
+							<input class="input" type="password" name="password2" class="form-control" required="" id="id_password2" placeholder="✎    Пароль">
+						</p>
+						<span class="focus-input"></span>
+
+
+
+
+
+					</span>
+
+
+
+
+					</span>
+
+
+					<div class="container-login100-form-btn">
+						<button type="submit" class="login100-form-btn" style="margin: 50px auto 0 auto;">
+							Зарегистрироваться
+						</button>
+					</div>
+
+
+				</form>
+			</div>
+		</div>
+	</div>
+
+
+	<div id="dropDownSelect1"></div>
+
+
+
+
+		<script src="{% static 'register/js/register.js' %}"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+
+</body>
+</html>

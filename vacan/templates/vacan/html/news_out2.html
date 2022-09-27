@@ -1,0 +1,132 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'vacan/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/all.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/about-site.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/advantage.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/const-line.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/contacts-block.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/footer.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/menu.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/our-partners.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/parallax.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/registration-form.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/resume-block.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/tape.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <title>{{ vacan.special }}</title>
+</head>
+<body>
+
+        <!-- зафиксированная строка с номером телефона и социальными сетями начало -->
+        <div class="const_line">
+            <p id="left_const_line"><a href="tel:+78672511238"><img src="{% static 'main/img/telephone.png' %}" alt="telephone">+7 (8672) 51-12-38</a></p>
+            <p id="right_const_line">Мы в соц. сетях:
+                <a href="https://www.instagram.com/copp__rso/" target="_blank"><img src="{% static 'main/img/instagram.png' %}" alt="instagram" style="margin-left: 10px;"></a>
+                <a href="https://www.facebook.com/copp.15" target="_blank"><img src="{% static 'main/img/facebook.png' %}" alt="facebook"></a>
+                <a href="https://twitter.com/copp_spb" target="_blank"><img src="{% static 'main/img/twitter.png' %}" alt="twitter"></a>
+                <a href="https://wa.me/+78672511238" target="_blank"><img src="{% static 'main/img/whatsapp.png' %}" alt="whatsapp"></a>
+            </p>
+        </div>
+        <!-- зафиксированная строка с номером телефона и социальными сетями конец -->
+    <div id="empty"></div>
+    <!-- Главное меню начало-->
+    <div id="header">
+        <div class="logo-wrap">
+            <a href="index.html">
+                <div id="logo">
+                    <img src="{% static 'main/img/main/blueLogo.png' %}" alt="logo">
+                    ПРОФОРИЕНТАЦИЯ
+                </div>
+            </a>
+        </div>
+
+
+        <div id="menu">
+            <hr id="hr_before">
+            <div id="menu-wrap">
+                <ul class="menu">
+                    <li><a style="color: rgb(255, 84, 84);" href="{% url 'home'%}">ГЛАВНАЯ</a></li>
+                    <li><a href="{% url 'news' %}">НОВОСТИ</a></li>
+                    <li id="seekers"><a href="{% url 'vacan' %}">СОИСКАТЕЛЯМ</a>
+                        <ul class="submenu">
+                            <li><a href="{% url 'index_sch' %}">ШКОЛЬНИКАМ</a></li>
+                            <li><a href="{% url 'resumeout' %}">РАБОТОДАТЕЛЯМ</a></li>
+                        </ul>
+                    </li>
+                    {% if request.user.is_authenticated %}
+                            <li>Добро пожаловать, {{ user.username }} /</li>
+                            <li><a href="{% url 'logout' %}">Выход</a></li>
+                        {%else%}
+                            <li><a href="{% url 'register' %}">РЕГИСТРАЦИЯ</a></li>
+                            <li><a href="{% url 'login' %}">ВОЙТИ</a></li>
+                        {% endif %}
+                    <button onclick="location.href={% url 'home2' %}" class="btn btn-primary btn-sm add_resume" style="background-color: #00334e; border: none; float: right; width: 30%; height: 30%; position: relative; left: 30%">Добавить резюме</button>
+                </ul>
+            </div>
+            <hr id="hr_after">
+        </div>
+    </div>
+    <!-- Главное меню конец-->
+    <section class="container-fluid mt-5 ps-5 pe-5 vacancy" style="margin-bottom: 6.1%;">
+        {% for i in news_home %}
+    <div class = "card ps-4 news_block">
+        <h1 class="card-title news_header">{{ i.special }}</h1>
+        <h3 class="card-subtitle mb-2 mt-1 text-muted datetime">{{ i.zp }}₽</h3>
+        <p class="card-text news_text">{{ i.trebovan }}</p>
+        <p class="news_text">{{ i.date }}</p>
+        <button onclick="location.href=`{% url 'news_detail2' i.id %}`" class="btn-primary btn-sm">Читать детальнее</button>
+    </div>
+     {% endfor %}
+    </section>
+
+    <div class="footer">
+                <div class="ul">
+                    <div class="footer_column">
+                            <div class="footer_content">
+                                <p class="footer_head">ЦОПП</p><hr>
+                                <a href="https://copp15.ru/"><img src="{% static 'main/img/logoCopp.png' %}" id="logo-copp" alt="logo"></a>
+                            </div>
+                        </div>
+                    <div class="footer_column">
+                        <div class="footer_content">
+                            <p class="footer_head">Документация</p><hr>
+                            <p><a href="https://drive.google.com/drive/folders/1o1LztE8b--L0l-roRAbLAuYdr0ks8-N_?usp=sharing" target="_blank">Пользовательское соглашение</a></p>
+                            <p><a href="https://drive.google.com/drive/folders/1Nt3H-qpHo728Ep5PRp3-IOkUpVXnhzL_?usp=sharing" target="_blank">Политика конфиденциальности</a></p>
+                            <p><a href="https://drive.google.com/drive/folders/1gmuz6909j_aXigFQ7CpZxq6aLQ6d5z2e?usp=sharing" target="_blank">Нормативно-правовые акты</a></p>
+                            <p><a href="https://drive.google.com/drive/folders/1oBd42zRh1j2lfFuz2_OeqSkk_0o_4IoA?usp=sharing" target="_blank">Регламент деятельности ЦОПП</a></p>
+                        </div>
+                    </div>
+                    <div class="footer_column">
+                            <div class="footer_content" id="partners">
+                                <p class="footer_head">О нас</p><hr>
+                                <p><a href="https://worldskills.ru/nashi-proektyi/czentr-operezhayushhej-professionalnoj-podgotovki.html" target="_blank">О проекте</a></p>
+                                <p>Наши партнёры:</p>
+                                <a href="https://worldskills.ru/" target="_blank"><img src="{% static 'main/img/worldskills.jpg' %}" alt="worldskills_logo"></a>
+                                <a href="http://mon.alania.gov.ru/" target="_blank"><img src="{% static 'main/img/minobr.jpg' %}" alt=minobr_logo></a>
+                                <a href="https://edu.gov.ru/" target="_blank"><img src="{% static 'main/img/minpros.jpg' %}" alt="minpros_logo"></a>
+                            </div>
+                        </div>
+                    <div class="footer_column">
+                            <div class="footer_content" id="contacts">
+                                <p class="footer_head">Контакты</p><hr>
+                                <p><a href="tel:+78672511238"><img src="{% static 'main/img/telephone.png' %}" alt="telephone">+7 (8672) 51-12-38</a></p>
+                                <div><address><img src="{% static 'main/img/address.png' %}" alt="address">г. Владикавказ, ул. Галковского, дом 221</address></div>
+                                <p><a href="mailto:'tsopp15@gmail.com'"><img src="{% static 'main/img/post.png' %}" alt="mail">copp15@mail.ru</a></p>
+                                <p>Мы в соцсетях:</p>
+                                <a class="social-nets" href="https://www.instagram.com/copp__rso/" target="_blank"><img src="{% static 'main/img/instagram.png' %}" alt="instagram"></a>
+                                <a class="social-nets" href="https://www.facebook.com/copp.15" target="_blank"><img src="{% static 'main/img/facebook.png' %}" alt="facebook"></a>
+                                <a class="social-nets" href="https://twitter.com/copp_spb" target="_blank"><img src="{% static 'main/img/twitter.png' %}" alt="twitter"></a>
+                                <a class="social-nets" href="https://wa.me/+78672511238" target="_blank"><img src="{% static 'main/img/whatsapp.png' %}" alt="whatsapp"></a>
+                            </div>
+                        </div>
+                </div>
+            </div>
+
+</body>
+</html>

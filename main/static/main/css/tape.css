@@ -1,0 +1,115 @@
+
+ .tape {
+    left: 0;
+    right: 0;
+    height: fit-content;
+    z-index: 10;
+    font-size: 26px;
+    font-family: Raleway;
+    height: 350px;
+}
+
+
+
+
+
+
+
+
+.right_line{
+     background-color: #ffc208;
+     width: 100%;
+     position: relative;
+     margin-top: 80px;
+     margin-bottom: 50px;
+     height: auto;
+}
+.left_line{
+     background-color: #ffc208;
+     width: 95%;
+     position: relative;
+     margin-top: 80px;
+     margin-bottom: 50px;
+     height: auto;
+}
+
+
+
+
+
+
+
+
+
+
+.tape .right_line{
+    position: relative;
+    animation:showRight 1.5s;
+    float: right;
+}
+.tape .left_line {
+    position: relative;
+    animation: showLeft 1.5s;
+    float: left;
+}
+
+
+
+
+
+
+
+
+
+
+.right_block{
+     position: relative;
+     animation: showLeft 1.5s;
+     float:left;
+     display:block;
+     width: 400px;
+     text-align: left;
+     margin-left: 55px;
+     padding: 30px;
+
+}
+.left_block{
+    position: relative;
+    animation: showRight 1.5s;
+    float: right;
+    display:block;
+    width: 400px;
+    text-align: right;
+    margin-right: 55px;
+    padding: 30px;
+}
+
+
+
+
+
+
+
+
+@keyframes showRight {
+from {right:-10%;}
+to {right:0;}
+}
+
+
+
+
+
+
+.tape h2{
+    font-weight: normal;
+    font-size: 36px;
+    font-family: 'Raleway', sans-serif;
+    color: #00334E;
+}
+
+@keyframes showLeft {
+from {left:-10%;}
+to {left:0;}
+}
+
